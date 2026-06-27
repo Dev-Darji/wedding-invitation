@@ -1420,14 +1420,34 @@ document.getElementById('rsvp-submit').addEventListener('click', () => {
   const msg  = document.getElementById('rsvp-msg').value.trim();
   if (!name) { document.getElementById('rsvp-name').focus(); return; }
 
-  let text;
+  let lines = [];
   if (attending) {
-    text = `Hello Aarav & Ishita! 🎉%0A%0AWe are thrilled to attend your wedding!%0A%0A*RSVP Details:*%0A*Name:* ${encodeURIComponent(name)}%0A*Attending:* Yes ✅%0A*Adults:* ${counts.adults}%0A*Children:* ${counts.kids}`;
+    lines.push("Hello Aarav & Ishita! 🎉");
+    lines.push("");
+    lines.push("We are thrilled to attend your wedding!");
+    lines.push("");
+    lines.push("*RSVP Details:*");
+    lines.push(`*Name:* ${name}`);
+    lines.push("*Attending:* Yes ✅");
+    lines.push(`*Adults:* ${counts.adults}`);
+    lines.push(`*Children:* ${counts.kids}`);
   } else {
-    text = `Hello Aarav & Ishita! ❤️%0A%0AWe regret we cannot attend, but our best wishes are always with you!%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Attending:* No ❌`;
+    lines.push("Hello Aarav & Ishita! ❤️");
+    lines.push("");
+    lines.push("We regret we cannot attend, but our best wishes are always with you!");
+    lines.push("");
+    lines.push(`*Name:* ${name}`);
+    lines.push("*Attending:* No ❌");
   }
-  if (msg) text += `%0A%0A*Blessings:* _${encodeURIComponent(msg)}_`;
-  text += '%0A%0AWith love ❤️ #AaravKiIshita';
+
+  if (msg) {
+    lines.push("");
+    lines.push(`*Blessings:* _${msg}_`);
+  }
+  lines.push("");
+  lines.push("With love ❤️ #AaravKiIshita");
+
+  const text = encodeURIComponent(lines.join("\n"));
 
   // Mini confetti
   firePartyPopper();
