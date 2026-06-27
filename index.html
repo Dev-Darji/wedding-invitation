@@ -360,48 +360,108 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .hero-inner { position: relative; z-index: 2; max-width: 560px; }
 .hero-mantra { font-family: var(--ff-hindi); font-size: 1rem; color: var(--maroon); letter-spacing: 1px; margin-bottom: 24px; opacity: .8; }
 .hero-couple-container {
-  margin: 30px 0 35px;
+  margin: 40px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
 }
 .hero-groom-name, .hero-bride-name {
   font-family: var(--ff-display);
-  font-size: clamp(2.8rem, 10vw, 4.2rem);
+  font-size: clamp(3.2rem, 11vw, 4.8rem);
   font-weight: 900;
   color: var(--maroon);
   line-height: 1;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 2px rgba(123,28,46,.1);
 }
 .hero-parent-sub {
-  font-family: var(--ff-body);
-  font-size: clamp(0.95rem, 3.2vw, 1.15rem);
+  font-family: var(--ff-sans);
+  font-size: clamp(0.72rem, 2.5vw, 0.85rem);
   color: var(--green);
-  font-weight: 500;
-  margin-top: 4px;
-  letter-spacing: .5px;
+  font-weight: 600;
+  margin-top: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 .hero-weds {
   font-family: var(--ff-body);
   font-style: italic;
   font-size: clamp(1.4rem, 4vw, 1.8rem);
   color: var(--gold);
-  margin: 4px 0;
+  margin: 12px 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 20px;
   width: 100%;
 }
 .hero-weds::before, .hero-weds::after {
   content: '';
   height: 1px;
-  width: 50px;
+  width: 60px;
   background: var(--gold);
   opacity: .5;
 }
+/* Corner Ornaments */
+.hero-corners, .hero-corners-bottom {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.hero-corners::before, .hero-corners::after,
+.hero-corners-bottom::before, .hero-corners-bottom::after {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  opacity: 0.65;
+}
+.hero-corners::before {
+  top: 15px; left: 15px;
+  background: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L40,0 Q60,20 60,60 Q20,60 0,40 Z' fill='none' stroke='%23C9A84C' stroke-width='1.5'/%3E%3Cpath d='M0,0 C20,10 40,10 50,30 C30,40 10,20 0,0' fill='%23C9A84C' opacity='.2'/%3E%3Ccircle cx='10' cy='10' r='3' fill='%237B1C2E'/%3E%3Cpath d='M5,5 L115,5 M5,5 L5,115' stroke='%23C9A84C' stroke-width='1' stroke-dasharray='3,3'/%3E%3C/svg%3E") no-repeat;
+}
+.hero-corners::after {
+  top: 15px; right: 15px;
+  transform: scaleX(-1);
+  background: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L40,0 Q60,20 60,60 Q20,60 0,40 Z' fill='none' stroke='%23C9A84C' stroke-width='1.5'/%3E%3Cpath d='M0,0 C20,10 40,10 50,30 C30,40 10,20 0,0' fill='%23C9A84C' opacity='.2'/%3E%3Ccircle cx='10' cy='10' r='3' fill='%237B1C2E'/%3E%3Cpath d='M5,5 L115,5 M5,5 L5,115' stroke='%23C9A84C' stroke-width='1' stroke-dasharray='3,3'/%3E%3C/svg%3E") no-repeat;
+}
+.hero-corners-bottom::before {
+  bottom: 15px; left: 15px;
+  transform: scaleY(-1);
+  background: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L40,0 Q60,20 60,60 Q20,60 0,40 Z' fill='none' stroke='%23C9A84C' stroke-width='1.5'/%3E%3Cpath d='M0,0 C20,10 40,10 50,30 C30,40 10,20 0,0' fill='%23C9A84C' opacity='.2'/%3E%3Ccircle cx='10' cy='10' r='3' fill='%237B1C2E'/%3E%3Cpath d='M5,5 L115,5 M5,5 L5,115' stroke='%23C9A84C' stroke-width='1' stroke-dasharray='3,3'/%3E%3C/svg%3E") no-repeat;
+}
+.hero-corners-bottom::after {
+  bottom: 15px; right: 15px;
+  transform: scale(-1);
+  background: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 L40,0 Q60,20 60,60 Q20,60 0,40 Z' fill='none' stroke='%23C9A84C' stroke-width='1.5'/%3E%3Cpath d='M0,0 C20,10 40,10 50,30 C30,40 10,20 0,0' fill='%23C9A84C' opacity='.2'/%3E%3Ccircle cx='10' cy='10' r='3' fill='%237B1C2E'/%3E%3Cpath d='M5,5 L115,5 M5,5 L5,115' stroke='%23C9A84C' stroke-width='1' stroke-dasharray='3,3'/%3E%3C/svg%3E") no-repeat;
+}
+
+/* Countdown section below hero */
+.countdown-section {
+  background: var(--cream2);
+  padding: 48px 20px;
+  border-top: 1px solid rgba(201,168,76,.2);
+  border-bottom: 1px solid rgba(201,168,76,.2);
+  text-align: center;
+  position: relative;
+}
+.countdown-section::before {
+  content: '✨  ✦  ✨';
+  display: block;
+  font-family: var(--ff-body);
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin-bottom: 16px;
+  letter-spacing: 6px;
+}
+.countdown-section .countdown {
+  margin: 0 auto;
+}
+
 /* Countdown */
-.countdown { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; max-width: 320px; margin: 0 auto 40px; }
+.countdown { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; max-width: 320px; margin: 0 auto; }
 .cd-block { background: var(--maroon); color: var(--cream); border-radius: 12px; padding: 10px 4px 8px; border: 1px solid rgba(201,168,76,.3); }
 .cd-num { display: block; font-family: var(--ff-display); font-size: clamp(1.6rem,5vw,2.2rem); font-weight: 700; color: var(--gold2); line-height: 1; }
 .cd-label { display: block; font-family: var(--ff-sans); font-size: .6rem; text-transform: uppercase; letter-spacing: 2px; opacity: .6; margin-top: 4px; }
@@ -743,8 +803,9 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
   <!-- ── HERO ─────────────────────────────────────────── -->
   <section class="hero" id="home">
+    <div class="hero-corners"></div>
+    <div class="hero-corners-bottom"></div>
     <div class="hero-inner">
-      <p class="hero-mantra reveal">🕉 Om Shree Ganeshaya Namah</p>
       <!-- Groom & Bride with Parent subtexts -->
       <div class="hero-couple-container">
         <!-- Groom -->
@@ -762,15 +823,21 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
           <p class="hero-parent-sub">Daughter of Mr. & Mrs. Sanjaybhai Patel</p>
         </div>
       </div>
+      <div class="hero-scroll reveal">
+        <span>Scroll to explore</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7B1C2E" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COUNTDOWN SECTION ──────────────────────────── -->
+  <section class="countdown-section">
+    <div class="container">
       <div class="countdown reveal" id="cd">
         <div class="cd-block"><span class="cd-num" id="cd-d">--</span><span class="cd-label">Days</span></div>
         <div class="cd-block"><span class="cd-num" id="cd-h">--</span><span class="cd-label">Hrs</span></div>
         <div class="cd-block"><span class="cd-num" id="cd-m">--</span><span class="cd-label">Min</span></div>
         <div class="cd-block"><span class="cd-num" id="cd-s">--</span><span class="cd-label">Sec</span></div>
-      </div>
-      <div class="hero-scroll reveal">
-        <span>Scroll to explore</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7B1C2E" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
       </div>
     </div>
   </section>
